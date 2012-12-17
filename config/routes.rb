@@ -1,6 +1,8 @@
 Stream::Application.routes.draw do
 
   post 'users/sign_in' => 'users#sign_in', :as => :sign_in
+  post 'users/sign_up' => 'users#create', :as => :sign_up
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  attr_accessible :first, :last, :phone, :password
+  validates_presence_of :first, :last, :phone, :password
+  validates_uniqueness_of :phone
+
   def self.authenticate(params)
     # params = { phone: '5550053321', password: 'asdhfashdf'}
     sanitized_params = params.slice(:phone, :password)
