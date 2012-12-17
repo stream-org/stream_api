@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Stream::Application.load_tasks
+StreamApp::Application.load_tasks

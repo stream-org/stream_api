@@ -1,4 +1,4 @@
-Stream::Application.routes.draw do
+StreamApp::Application.routes.draw do
 
   post 'users/sign_in' => 'users#sign_in', :as => :sign_in
   post 'users/sign_up' => 'users#create', :as => :sign_up
