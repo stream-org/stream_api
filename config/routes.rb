@@ -1,5 +1,6 @@
 StreamApp::Application.routes.draw do
 
+  get 'users/:user_id/streams' => 'user_streams#index', :as => :user_streams
   resources :streams, only: [:show, :create]
   post 'users/sign_in' => 'users#sign_in', :as => :sign_in
   post 'users/sign_up' => 'users#create', :as => :sign_up
