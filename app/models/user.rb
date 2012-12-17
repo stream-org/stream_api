@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   def self.authenticate(params)
-    # params = { username: 'ashdfhasdf', password: 'asdhfashdf'}
-    where(first: params[:first], password: params[:password]).first
+    # params = { phone: '5550053321', password: 'asdhfashdf'}
+    sanitized_params = params.slice(:phone, :password)
+    where(sanitized_params).first
   end
 end

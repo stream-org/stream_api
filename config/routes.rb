@@ -1,6 +1,6 @@
 Stream::Application.routes.draw do
 
-  get 'users/sign_in' => 'users#sign_in', :as => :sign_in
+  post 'users/sign_in' => 'users#sign_in', :as => :sign_in
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

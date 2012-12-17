@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def sign_in
-    # params = { user: { username: 'ashdfhasdf', password: 'asdhfashdf'} }
+    # params = { user: { phone: '5550053321', password: 'asdhfashdf'} }
     user = User.authenticate(params[:user])
     respond_to do |format|
       format.json { render(json: user) }
