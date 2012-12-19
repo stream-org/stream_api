@@ -58,5 +58,8 @@ module StreamApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # render errors in json - http://stackoverflow.com/questions/10253366/need-to-return-json-formatted-404-error-in-rails
+    config.exceptions_app = self.routes
   end
 end
