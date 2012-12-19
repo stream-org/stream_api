@@ -1,13 +1,13 @@
 StreamApp::Application.routes.draw do
 
-  resources :pictures
 
-
-  get 'users/:user_id/streams' => 'user_streams#index', :as => :user_streams
-  resources :streams, only: [:show, :create]
-  post 'users/sign_in' => 'users#sign_in', :as => :sign_in
-  post 'users/sign_up' => 'users#create', :as => :sign_up
-
+  namespace :api do
+    resources :pictures
+    resources :streams, only: [:show, :create]
+    get 'users/:user_id/streams' => 'user_streams#index', :as => :user_streams
+    post 'users/sign_in' => 'users#sign_in', :as => :sign_in
+    post 'users/sign_up' => 'users#create', :as => :sign_up
+  end
 
   match "/404" => "errors#not_found"
   match "/500" => "errors#exception"

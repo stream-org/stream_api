@@ -1,4 +1,4 @@
-class PicturesController < ApplicationController
+class Api::PicturesController < ApplicationController
 
   # GET /pictures/1.json
   def show

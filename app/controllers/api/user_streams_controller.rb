@@ -1,4 +1,4 @@
-class UserStreamsController < ApplicationController
+class Api::UserStreamsController < ApplicationController
 
   # GET /streams.json
   def index

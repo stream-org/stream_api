@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   def sign_in
     # params = { user: { phone: '5550053321', password: 'asdhfashdf'} }
     @user = User.authenticate(params[:user])

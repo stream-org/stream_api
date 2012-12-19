@@ -1,4 +1,4 @@
-class StreamsController < ApplicationController
+class Api::StreamsController < ApplicationController
 
   # GET /streams/1.json
   def show
@@ -19,7 +19,7 @@ class StreamsController < ApplicationController
     # failure: returns code 422 with stream errors as json
     respond_to do |format|
       if @stream.save
-        format.json { render json: @stream, status: :created, location: @stream }
+        format.json { render json: @stream, status: :created, location: [:api, @stream] }
       else
         format.json { render json: @stream.errors, status: :unprocessable_entity }
       end
