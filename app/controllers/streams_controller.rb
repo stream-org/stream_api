@@ -7,7 +7,7 @@ class StreamsController < ApplicationController
     # returns 200 with either the stream object jsonified or null
     # TODO: include pictures with this response like so http://stackoverflow.com/questions/611931/render-json-does-not-accept-options
     respond_to do |format|
-      format.json { render json: @stream }
+      format.json { render json: @stream.to_json(:include => :pictures) }
     end
   end
 
