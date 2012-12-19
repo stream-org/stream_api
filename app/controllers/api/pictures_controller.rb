@@ -5,7 +5,7 @@ class Api::PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
 
     respond_to do |format|
-      format.json { render json: @picture }
+      format.json { render json: @picture.to_json(:include => [:user], :methods => [:likes_count]) }
     end
   end
 
