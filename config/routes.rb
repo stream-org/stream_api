@@ -1,7 +1,7 @@
 StreamApp::Application.routes.draw do
 
-
   namespace :api do
+    resources :likes, only: [:create, :destroy]
     resources :pictures
     resources :streams, only: [:show, :create]
     get 'users/:user_id/streams' => 'user_streams#index', :as => :user_streams
